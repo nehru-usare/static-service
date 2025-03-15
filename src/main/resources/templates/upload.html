@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upload Site</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <title>Upload Your Static Site</title>
+    <link rel="stylesheet" href="/css/styles.css">  <!-- Common styles -->
+    <link rel="stylesheet" href="/css/upload.css">  <!-- Upload page styles -->
 </head>
 <body>
     <header>
@@ -17,13 +18,15 @@
     </header>
 
     <main>
-        <h1>Upload Site</h1>
         <form action="/sites/upload" method="post" enctype="multipart/form-data">
+            <h1>Upload Your Static Site</h1>
+            <p>Please upload a ZIP file containing your static website.</p>
+
             <label for="file">Select File to Upload:</label>
             <input type="file" id="file" name="file" required>
 
             <label for="startFile">Start File (Optional):</label>
-            <input type="text" id="startFile" name="startFile">
+            <input type="text" id="startFile" name="startFile" placeholder="index.html">
 
             <button type="submit">Upload</button>
         </form>

@@ -1,37 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>List of Sites</title>
-<link rel="stylesheet" href="/css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of Sites</title>
+    <link rel="stylesheet" href="/css/styles.css">  <!-- Common styles -->
+    <link rel="stylesheet" href="/css/list.css">    <!-- List page styles -->
 </head>
 <body>
-	<header>
-		<nav>
-			<ul>
-				<li><a href="/sites/list">List Sites</a></li>
-				<li><a href="/sites/upload">Upload Site</a></li>
-			</ul>
-		</nav>
-	</header>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/sites/list">List Sites</a></li>
+                <li><a href="/sites/upload">Upload Site</a></li>
+            </ul>
+        </nav>
+    </header>
 
-	<main>
-		<div class="site-container">
-			<th:block th:each="site : ${sites}">
-				<div class="site-card"
-					th:attr="onclick=|window.location.href='/sites/view/' + ${site}|"
-					style="cursor: pointer;">
-					<a th:href="@{'/sites/view/' + ${site}}" class="site-link"> <span
-						th:text="${site}"></span>
-					</a>
-				</div>
-			</th:block>
-		</div>
-	</main>
+    <main>
+        <h1>Available Sites</h1>
+        <div class="site-container">
+            <th:block th:each="site : ${sites}">
+                <div class="site-card"
+                    th:attr="onclick=|window.location.href='/sites/view/' + ${site}|">
+                    <a th:href="@{'/sites/view/' + ${site}}" class="site-link">
+                        <span th:text="${site}"></span>
+                    </a>
+                </div>
+            </th:block>
+        </div>
+    </main>
 
-	<footer>
-		<p>&copy; 2025 My Website</p>
-	</footer>
+    <footer>
+        <p>&copy; 2025 My Website</p>
+    </footer>
 </body>
 </html>
